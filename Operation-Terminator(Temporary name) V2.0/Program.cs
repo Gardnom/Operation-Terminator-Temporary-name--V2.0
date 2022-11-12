@@ -17,10 +17,10 @@ namespace Operation_Terminator_Temporary_name__V2._0
                     continue;    
                 }
 
-                float[] r = {result};
-                var brainInput = Vector<float>.Build.Dense(r);
-                var resVec = nn.Brain(brainInput);
-                Console.WriteLine("The machine gives you back: " + resVec.At(0));
+                float[,] r = {{result}, {1}, {2}, {4}};
+                var brainInput = Matrix<float>.Build.DenseOfArray(r);
+                var resMat = nn.BrainBatch(brainInput);
+                Console.WriteLine("The machine gives you back: " + resMat[0, 0]);
 
             }
             

@@ -28,6 +28,15 @@ namespace Operation_Terminator_Temporary_name__V2._0
             nodes = inputs * weights;
             
         }
+        
+        public Matrix<float> ForwardPassBatch(Matrix<float> inputs) {
+            /*if (inputs.Count != m_NInputs) {
+                Console.WriteLine("Wrong number of inputs in forward pass");
+                return;
+            }*/
+            return inputs * weights;
+            
+        }
 
         public void ActivationReLU() {
             nodes.MapInplace(val => {
